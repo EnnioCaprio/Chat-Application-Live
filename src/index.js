@@ -69,6 +69,14 @@ io.on('connection', (socket) => {
     })
 })
 
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static('client/build'));
+
+	app.get('*', (request, response) => {
+		response.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+	});
+}
+
 const port = process.env.PORT || 5000;
 
 server.listen(port, () => {
