@@ -11,7 +11,7 @@ const uuid = require('uuid');
 env.config();
 
 const server = http.createServer(app);
-const io = socket(server);
+const io = socket();
 
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('client/build'));
