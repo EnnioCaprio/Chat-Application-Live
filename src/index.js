@@ -7,8 +7,6 @@ const { generateMessages, generatePosition } = require('./utils/messages');
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./utils/users'); 
 const uuid = require('uuid');
 
-const url = window.location.origin;
-
 env.config();
 
 const server = http.createServer(app);
