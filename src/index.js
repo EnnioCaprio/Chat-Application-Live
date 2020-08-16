@@ -12,7 +12,7 @@ const url = window.location.origin;
 env.config();
 
 const server = http.createServer(app);
-const io = socket(url);
+const io = socket(server);
 
 
 const port = process.env.PORT || 5000;
