@@ -25,7 +25,7 @@ const Chat = () => {
 
     const socketRef = useRef();
 
-    const ENDPOINT = 'http://localhost:5000';
+    const ENDPOINT = window.location.origin;
 
     const btnPosition = document.querySelector('#position');
 
