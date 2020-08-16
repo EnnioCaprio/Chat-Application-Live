@@ -13,6 +13,14 @@ env.config();
 const server = http.createServer(app);
 const io = socket(server);
 
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static('client/build'));
+
+	app.get('*', (request, response) => {
+		response.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+	});
+}
+
 
 const port = process.env.PORT || 5000;
 
@@ -72,14 +80,6 @@ io.on('connection', (socket) => {
 
     })
 })
-
-if (process.env.NODE_ENV === 'production') {
-	app.use(express.static('client/build'));
-
-	app.get('*', (request, response) => {
-		response.sendFile(path.join(__dirname, '../client/build', 'index.html'));
-	});
-}
 
 server.listen(port, () => {
     console.log('listening on port:', port)
