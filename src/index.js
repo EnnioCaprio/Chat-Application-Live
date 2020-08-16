@@ -7,10 +7,15 @@ const { generateMessages, generatePosition } = require('./utils/messages');
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./utils/users'); 
 const uuid = require('uuid');
 
+const url = window.location.origin;
+
 env.config();
 
 const server = http.createServer(app);
-const io = socket(server);
+const io = socket(url);
+
+
+const port = process.env.PORT || 5000;
 
 
 io.on('connection', (socket) => {
@@ -76,8 +81,6 @@ if (process.env.NODE_ENV === 'production') {
 		response.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 	});
 }
-
-const port = process.env.PORT || 5000;
 
 server.listen(port, () => {
     console.log('listening on port:', port)
