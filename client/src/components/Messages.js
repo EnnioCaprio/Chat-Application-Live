@@ -9,13 +9,14 @@ const Messages = (props) => {
             <div className="container-message">
                 <h3 className="msg-username">{props.text.username}</h3>
                 {
-                    props.text.message ? <h3 className="msg-message">{props.text.message}</h3> : <a href={props.text.position} target="_blank" className="msg-position">Position</a>
+                    props.text.message ? <h3 className="msg-message">{props.text.message}</h3> : <button className="msg-position" onClick={() => {
+                        window.open(props.text.position, '_blank')
+                    }}>Position</button>
                 }
                 <h4 className="msg-time">{props.text.createdAt}</h4>
             </div>
         </div>
     )
 }
-
 
 export { Messages as default }

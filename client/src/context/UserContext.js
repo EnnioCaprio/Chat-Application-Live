@@ -6,8 +6,6 @@ export const UserContext = createContext();
 export const UserProvider = (props) => {
 
     const [users, dispatchUser] = useReducer(logReducer, {});
-
-    console.log(users)
     
     useEffect(() => {
         const data = JSON.parse(sessionStorage.getItem('users'));

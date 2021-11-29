@@ -1,0 +1,37 @@
+version: '3'
+services:
+  nginx:
+    depends_on:
+      - react-front
+      - express-server
+    restart: on-failure
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - '80:80'
+      - '443:443'
+    networks: 
+      - chat-app
+  react-front:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    stdin_open: true
+    #ports:
+    #  - '3001:3001'
+    networks:
+      - chat-app
+    restart: on-failure
+  express-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #ports: 
+    #  - '4000:4000'
+    networks:
+      - chat-app
+    restart: on-failure
+networks:
+  chat-app:
+    driver: bridge

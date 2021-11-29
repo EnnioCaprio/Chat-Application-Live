@@ -25,7 +25,7 @@ const Chat = () => {
 
     const socketRef = useRef();
 
-    const ENDPOINT = window.location.origin;
+    const ENDPOINT = process.env.REACT_APP_URL;
 
     const btnPosition = document.querySelector('#position');
 
@@ -47,7 +47,7 @@ const Chat = () => {
         })
 
         socketRef.current.on('message', ({id, username, text, createdAt}) => {
-            if(username){
+            if(username && text.length > 0){
                 dispatch({
                     type: 'ADD_MESSAGE',
                     id,
