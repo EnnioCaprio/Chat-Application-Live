@@ -30,6 +30,6 @@ Deployment: Git, GitHub, Docker for containerization and DigitalOcean.
  <h3>Root credentials</h3>
  <ul>
   <li>Email: root@try.com</li>
-  <li>Password: 12345678</li>
+  <li>Password: root1234</li>
  </ul>
  
