@@ -1,35 +1,12 @@
-# Chat-Application-Live# Reddit-Clone-Application
+Hi, this is the chat application
 
-Hi this is the reddit clone application
+Chat App, this was my first WebSockets-based App. I used ReactJS and Node as the main stack and for WebSockets-based technology, I used a library called Socket.io. Users can create their own room and chat and share their locations with other users.
 
-Reddit Clone, as the name suggests it is the clone of the famous site Reddit, to develop this web app I used ReactJS, Node, Express and Postgres.
-For the API instead of REST,  I decided to use GraphQL for three reasons
-I had to create many routes for this app and with GraphQL I just had to use one endpoint for all the API calls.
-With GraphQL I could manage and retrieve only pieces of information that I needed for the client-side instead of retrieving unused data.
-I needed to use WebSockets for chat and notification, and GraphQL has also a feature called Subscriptions that is based on it.
-For styling, I used sass pre-processor so I could organize my code,
-with variables to not repeat myself and also create the Night mode feature.
-For the login-system, I didn't use JWT tokens instead I used cookie with set-attribute httponly so it cannot be modified by client-side javascript.
-This app includes almost all the basics actions of Reddit such as read, write, delete and update comments inside threads, create new threads, join different subject groups, vote system, friends system and create/chat with other users.<br/>
+Deployment: Git, GitHub, Docker for containerization, and DigitalOcean.
 
+<h1>Suggestions</h1>
 
-Deployment: Git, GitHub, Docker for containerization and DigitalOcean.
-
-
-<b>Things to add or to fix<b/><br/>
-  <ul>
-    <li>Pagination for user profile, so API doesn't need to load all the extra informations</li>
-    <li>The tree structure for comments</li>
-    <li>Improve ui error handling</li>
-  </ul>
-  
- 
- <h1>Suggestions</h1>
- <p>For login you can create your own account or you can login with root account</p>
- 
- <h3>Root credentials</h3>
- <ul>
-  <li>Email: root@try.com</li>
-  <li>Password: root1234</li>
- </ul>
- 
+<ul>
+	<li>In the main page, type your name and then enter the desired room to create/join in</li>
+	<li>You can also open multiple tabs for the same page and then try multiple users in the same room</li>
+</ul>
